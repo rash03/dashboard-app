@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+  <h1>Welcome to the Dashboard</h1>
+
+  <form (ngSubmit)="submitForm()" class="form-container">
+    <input type="text" name="customerId" [(ngModel)]="customerId" placeholder="Enter Customer ID">
+
+    <button type="submit">Get Customer</button>&nbsp;&nbsp;<button type="button" (click)="clearTable()">Clear</button>
+  </form>
+  <div class="table-container" *ngIf="customers.length > 0">
+    <table class="customer-table">
+      <thead>
+        <tr>
+          <th>Customer ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td (click)="navigateToCustomerDetails(customer)">{{ customer }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

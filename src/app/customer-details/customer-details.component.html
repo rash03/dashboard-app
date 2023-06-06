@@ -1,0 +1,20 @@
+<button (click)="navigateToDashboard()">Go Back to Dashboard</button>
+&NewLine;
+<h2>Customer Details</h2>
+
+
+<div *ngIf="customerDetails">
+  <div>
+    <strong>Name:</strong> {{ customerDetails.name }}
+  </div>
+  <div>
+    <strong>Age:</strong> {{ customerDetails.age }}
+  </div>
+  <div>
+    <strong>Is Admin:</strong> {{ customerDetails.isadmin ? 'Yes' : 'No' }}
+  </div>
+</div>
+
+<div *ngIf="!customerDetails">
+  <p>Loading customer details...</p>
+</div>
